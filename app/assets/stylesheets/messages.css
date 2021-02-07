@@ -1,0 +1,281 @@
+.wrapper {
+  display: flex;
+}
+/* サイドバー */
+.side-bar {
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+
+}
+
+.side-bar-header {
+  height: 100px;
+  padding: 0 20px;
+  background-color: #253141;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.header-name a{
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none;
+}
+
+.create-room {
+  font-size: 10px;
+}
+
+.create-room a {
+  border: 1px solid lightblue;
+  padding: 14px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+.rooms {
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+
+}
+
+.room {
+  padding: 20px 0 ;
+  display: flex;
+}
+
+.room-name a {
+  text-decoration: none;
+  color: white;
+}
+
+/* メイン */
+.chat {
+  background-color: #FFFFFF;
+  width: calc(100vw - 300px);
+}
+
+.chat-header {
+  height: 100px;
+  /* padding: 0 40px;
+  display: flex;
+  justify-content: space-between; */
+  margin: 0;
+  border-radius: 0;
+  border-bottom: 3px solid deepskyblue;
+}
+
+.right-header{
+  float: right;
+}
+
+.header-title {
+  font-size: 24px;
+  /* color: #333; */
+  margin-top: 36px;
+}
+
+.header-button {
+  margin-top: 40px;
+}
+
+.header-button a {
+  padding: 20px;
+  color: darkred;
+  border: 1px solid darkred;
+  text-decoration: none;
+}
+
+
+.messages {
+  background-color: #FAFAFA;
+
+  height: calc(100vh - 100px - 90px);
+  padding: 46px 10px 0;
+  overflow: scroll;
+}
+
+.message {
+  margin: 10px 0 0 0;
+}
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+
+  
+}
+
+.form {
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 20px 40px;
+  display: flex;
+
+}
+
+.form-input {
+  /* background-color: white; */
+  display: flex;
+  width: 100%;
+
+}
+
+.form-message {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: #2f3e51;
+  color: white;
+  padding: 12px;
+  width: 40px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.kaiwa-img-left {
+  width: 14%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  text-align: right;
+  padding-top: 14px;
+}
+
+.kaiwa-img-left img{
+  width: 100%;
+  max-width: 75px!important;
+  border-radius: 50% !important;
+  object-fit: cover;
+}
+.kaiwa-name-left{
+  font-size: small;
+  position: relative;
+  width: 62%;
+  display:inline-block;
+  vertical-align:  top;
+  margin-left: 4%;
+  margin-right: 18%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.kaiwa-text-left{
+  display:inline-block; 
+  background-color: #e0edff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: medium;
+}
+
+.kaiwa-text-left:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 15px 7px 0;
+  border-color: transparent #e0edff transparent transparent;top:30px;left: -15px;
+}
+
+.kaiwa-name-right {
+  font-size: small;
+  position: relative;
+  width: 62%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 4%;
+  margin-left: 18%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.kaiwa-img-right {
+  width: 14%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding-top: 14px;
+  text-align: left;
+}
+
+.kaiwa-img-right img{
+  width: 100%;
+  max-width: 75px!important;
+  border-radius: 50% !important;
+  object-fit: cover;
+
+}
+
+.kaiwa-img-right p{
+  text-align: left;
+  padding:0px;
+  margin:0px;
+  
+}
+
+.kaiwa-text-right{
+  display: inline-block;
+  text-align:left;
+  background-color: #ffeda5;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: medium;
+}
+
+.kaiwa-text-right:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 0 7px 15px;
+  border-color: transparent transparent transparent #ffeda5;
+  top: 30px;
+  right: -15px;
+}

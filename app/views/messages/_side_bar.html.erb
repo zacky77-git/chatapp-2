@@ -1,0 +1,42 @@
+<div class="side-bar-header">
+  <div class="header-name">
+    <%= link_to current_user.name, edit_user_path(current_user) %>
+  </div>
+  <div class="hamburger-side-menu">
+        <input type="checkbox" id="side-menu-btn-check">
+        <label for="side-menu-btn-check" class="side-menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="side-menu-content">
+            <ul>
+                <li>
+                  <%= link_to 'トップ', root_path %>
+                </li>
+                <li>
+                  <%= link_to "グループ作成", new_room_path %>
+                </li>
+                <%# <li>実装予定 %>
+                    <%#= link_to 'フレンド', root_path %>
+                <%# </li> %>
+                <li>
+                     <%= link_to 'ユーザー設定', edit_user_path(current_user) %>
+                </li>
+                <li class="color-warning">
+                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="rooms">
+      <% @rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <%= link_to room.name, room_messages_path(room) %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

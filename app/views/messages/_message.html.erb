@@ -1,0 +1,48 @@
+<div class="message">
+  <%if message.user.id == current_user.id %>
+    <div class="kaiwa-name-right">
+      <%= message.user.name %>
+      <br />
+      <div class="kaiwa-text-right">
+        <%= message.content %>
+         <% if message.lang_data != "ja" %>
+        <%# もし言語が日本語ではなかったら %>
+          <br />
+          <p style="border-top: dashed 1px ;"><%= message.translated_content %></p>
+        <% end %>
+      </div>
+      <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image kaiwa-text-right' if message.image.attached? %>
+      <div class="message-date">
+        <%= l message.created_at %>
+      </div>
+    </div>
+    <div class="kaiwa-img-right rounded-circle">
+      <img src=<%= message.user.image %> class="rounded-circle" >
+    </div>
+
+  <% else %>
+
+    <div class="kaiwa-img-left rounded-circle">
+      <img src=<%= message.user.image %> class="rounded-circle" >
+    </div>
+    <div class="kaiwa-name-left">
+      <%= message.user.name %>
+      <br />
+      <div class="kaiwa-text-left">
+        <%= message.content%>
+        <% if message.lang_data != "ja" %>
+        <%# もし言語が日本語ではなかったら %>
+          <br />
+          <p style="border-top: dashed 1px ;"><%= message.translated_content %></p>
+        <% end %>
+      </div>
+      <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image kaiwa-text-left' if message.image.attached? %>
+      <div class="message-date">
+        <%= l message.created_at %>
+      </div>
+    </div>
+
+  <%end%>
+
+ 
+</div>

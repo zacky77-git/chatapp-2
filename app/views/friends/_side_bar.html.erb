@@ -1,0 +1,61 @@
+<div class="side-bar-header">
+  <div class="header-name">
+    <%= link_to current_user.name, edit_user_path(current_user) %>
+  </div>
+  <div class="hamburger-side-menu">
+        <input type="checkbox" id="side-menu-btn-check">
+        <label for="side-menu-btn-check" class="side-menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="side-menu-content">
+            <ul>
+                <li>
+                  <%= link_to 'トップ', root_path %>
+                </li>
+                <li>
+                  <%= link_to "グループ作成", new_room_path %>
+                </li>
+                <li>
+                    <%= link_to 'グループ', rooms_path %>
+                </li>
+                <li>
+                     <%= link_to 'ユーザー設定', edit_user_path(current_user) %>
+                </li>
+                <li class="color-warning">
+                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+                </li>
+            </ul>
+        </div>
+        <!--ここまでメニュー-->
+    </div>
+
+</div>
+
+
+<div class="rooms">
+  <% @friends.each do |user| %>
+    <div class="room">
+      <div class="room-name">
+        <%= link_to user.name, "#" %>
+      </div>
+
+      <%# <div> %>
+        <ul class="gnav">
+          <li><span class="gnav-img"><%= image_tag 'arrow_top.png' %></span>
+            <ul>
+              <%# if @belong_rooms.private_room_id == @rooms.private_room_id && @rooms.user.id == user.id%> 
+              <%# ユーザidと自分のidが紐付いた部屋がある時 %>
+                <li>
+                  <%= link_to 'Chat',"#"  %>
+                </li>
+              <%#else%>
+                <%# <li> %>
+                  <%#= link_to 'New Chat', rooms_chat_path(id: user.id), method: :post %>
+                <%# </li> %>
+              <%# end %>
+            </ul>
+          </li>
+        </ul>
+      <%# </div> %>
+    </div>
+  <% end %>
+</div>

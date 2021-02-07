@@ -1,0 +1,52 @@
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark  chat-header">
+      <div class="navbar-brand room-name">
+        <%# チャットルーム名を表示 %>
+        <%= @room.name %>
+      </div>
+   <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <!--ここからメニュー-->
+        <div class="menu-content">
+            <ul>
+                <li>
+                    <a href="#">room名変更</a>
+                </li>
+                <li class="color-warning">
+                    <%= link_to "グループを削除", room_path(@room), method: :delete %>
+                </li>
+               
+            </ul>
+        </div>
+        <!--ここまでメニュー-->
+    </div>
+  </nav>
+
+     
+<%# float: right; %>
+  <%# <div class="right-header"> %>
+    <%# <div class="header-button"> %>
+      <%#= link_to "チャットを消去", room_path(@room), method: :delete %>
+    <%# </div> %>
+  <%# </div> %>
+  
+
+
+
+
+<div class="messages">
+<%# _message.html.erbを部分テンプレートとして、読み込む %>
+  <%= render partial: 'message', collection: @messages %>
+</div> 
+
+<%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+  <div class="form-input ">
+    <label class="form-image">
+      <span class="image-file"><%= image_tag 'icon_162522_16.png' %></span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+    <%= f.text_field :content, class: 'form-control form-message', placeholder: 'type a message' %>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
+

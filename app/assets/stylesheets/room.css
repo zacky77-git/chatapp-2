@@ -1,0 +1,415 @@
+h1 {
+  letter-spacing: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #f05050;
+  font-size: 14px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.chat-room-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.chat-room-form__errors {
+  margin: 30px 0;
+  padding: 20px 40px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  text-align: center;
+}
+.chat-room-form__label {
+  display: block;
+  line-height: 50px;
+  font-weight: bold;
+  text-align: right;
+}
+.chat-room-form__input {
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.chat-room-form__action-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  color: #fff;
+  background-color: #38aef0;
+  border: 0;
+}
+.chat-room-form__field {
+  margin-top: 30px;
+}
+.chat-room-form__field:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.chat-room-form__field--left {
+  float: left;
+  width: 30%;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.chat-room-form__field--right {
+  float: right;
+  width: 70%;
+}
+
+.chat-room-user {
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  width: 500px;
+  margin: 0 auto;
+}
+.chat-room-user:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.chat-room-user__name {
+  float: left;
+}
+.chat-room-user__btn {
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+}
+.chat-room-user__btn--add {
+  color: #38aef0;
+}
+.chat-room-user__btn--remove {
+  color: #f05050;
+}
+
+.chat-room-user__name a {
+  text-decoration: none;
+  color: #38aef0;
+}
+
+select {
+  width: 500px;
+  height: 50px;
+}
+
+.top-header {
+  background-color: #434a54;
+  height: 80px;
+  width: 100%;
+}
+
+.field_with_errors {
+  /* contentsを指定すると、その要素のボックスだけが表示されなくなります */
+  display: contents;
+}
+
+
+
+
+.gnav {
+  display: flex;
+
+}
+.gnav > li { /*親階層のみ幅を25%にする */
+  width: 25%;
+}
+
+/*全てのリスト・リンク共通*/
+.gnav li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+.gnav li a {
+  /* background: #001b34; */
+  border-bottom: 1px solid #eee;
+  color: #fff;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+/*子階層以降共通*/
+.gnav li li {
+  height: 0;
+  
+  overflow: hidden;
+  transition: .5s;
+}
+.gnav li li a {
+  border-top: 1px solid #eee;
+}
+.gnav li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+  background-color: #57C3E9;
+
+}
+
+/*孫階層以降共通*/
+.gnav li ul li ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.gnav-img {
+  width: 15px;
+}
+
+.navbar-nav li {
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+.navbar-nav li:hover {
+  height: 2rem;
+  overflow: visible;
+  background-color: #57C3E9;
+}
+
+.navbar-toggler {
+  display: flex;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: #343a40;
+  border: 1px solid #57C3E9;
+
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-content {
+  width: fit-content;
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  /* left: 100%;leftの値を変更してメニューを画面外へ */
+  right: -20%;/*leftの値を変更してメニューを画面外へ*/
+  z-index: 80;
+  background-color: #343a40;
+  transition: all 0.5s;/*アニメーション設定*/
+  
+}
+.menu-content ul {
+  padding: 15px 10px 0;
+}
+.menu-content ul li {
+  border-bottom: solid 1px deepskyblue;
+  list-style: none;
+}
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  /* color:#ffffff; */
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  position: relative;
+}
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px deepskyblue;
+  border-right: solid 2px deepskyblue;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+
+.menu-content li:hover {
+  
+  overflow: visible;
+  background-color: #253141;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+  /* left: 92%;メニューを画面内へ */
+  right: 70px;/*メニューを画面内へ*/
+}
+
+
+
+.side-menu-btn {
+  /* position: fixed; */
+  /* top: 10px; */
+  /* right: 10px; */
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color:#253141;
+  border: 1px solid #57C3E9;
+
+}
+.side-menu-btn span,
+.side-menu-btn span:before,
+.side-menu-btn span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.side-menu-btn span:before {
+  bottom: 8px;
+}
+.side-menu-btn span:after {
+  top: 8px;
+}
+#side-menu-btn-check:checked ~ .side-menu-btn span {
+  background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#side-menu-btn-check:checked ~ .side-menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#side-menu-btn-check:checked ~ .side-menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.side-menu-content {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -100%;/*leftの値を変更してメニューを画面外へ*/
+
+  z-index: 80;
+  background-color:  #2f3e51;
+  transition: all 0.5s;/*アニメーション設定*/
+  margin-top: 100px;
+}
+.side-menu-content ul {
+  padding: 70px 10px 0;
+}
+.side-menu-content ul li {
+  border-bottom: solid 1px deepskyblue;
+  list-style: none;
+}
+.side-menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  /* color:#ffffff; */
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  position: relative;
+}
+.side-menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+
+  border-top: solid 2px deepskyblue;
+
+  border-right: solid 2px deepskyblue;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+.side-menu-content li:hover {
+  
+  overflow: visible;
+  background-color: #253141;
+}
+
+#side-menu-btn-check:checked ~ .side-menu-content {
+  left: 0;/*メニューを画面内へ*/
+  /* left: 0; */
+
+}
+
+/* チェックボックスを隠す */
+#menu-btn-check {
+    display: none;
+}
+#side-menu-btn-check {
+    display: none;
+}
+
+a {
+  color: #ffffff;
+}
+
+.color-warning a {
+  color: red;
+}
